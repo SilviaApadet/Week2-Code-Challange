@@ -5,12 +5,14 @@ This challenge requires us to create an interactive shopping list where the user
 This challenge combines array iteration, DOM manipulation, and event handling to create an interactive shopping list application.
 
 Table of Content.
+
  ~Features
- ~Installation
  ~Usage
- ~  Licence
+ ~Installation
+ 
 
  Features
+ 
 ~Adding of items; This will enable a user to update new items into the system.
 
 ~Clearing the list;The user will be able to clear items in the list.
