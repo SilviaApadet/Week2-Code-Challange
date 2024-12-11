@@ -1,0 +1,164 @@
+/* Body background with gradient effect */
+body {
+    background-color: #595f60; /
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); 
+}
+
+/* Container settings to center the content */
+.container {
+    border: 2px solid #ffffff; 
+    width: 40%; 
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+    top: 40%;
+    left: 50%; 
+    min-width: 450px; 
+    padding: 30px 40px; 
+}
+
+/* Styling for the new item input and button */
+#new-item {
+    position: relative;
+    background-color: #ffffffb8; 
+    padding: 30px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 15px 30px gray; 
+}
+
+/* Input field styling */
+#new-item input {
+    width: 70%; 
+    height: 40px;
+    font-family: 'Parkinsans', sans-serif;
+    border: 2px solid #B721FF; 
+    padding: 12px; 
+    border-radius: 5px; 
+}
+
+/* Focus effect for input field */
+#new-item input:focus {
+    outline: none; 
+    border-color: #21D4FD;
+}
+
+/* Button styling for adding items */
+#new-item button {
+    width: 20%; 
+    height: 60px;
+    background-color: #21D4FD; 
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer; 
+}
+
+/* Styling for items in the list */
+#items {
+    background-color: #ffffff; 
+    padding: 30px 20px;
+    margin-top: 60px; 
+    border-radius: 10px; 
+    box-shadow: 0 15px 20px gray;
+}
+
+/* Individual item styling */
+.item {
+    background-color: #ffffff; 
+    height: 50px; 
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #d1d3d4; 
+    cursor: pointer;
+    font-family: 'Parkinsans', sans-serif;
+}
+
+/* Button inside each item */
+.item button {
+    background-color: #21D4FD; 
+    color: #ffffff;
+    width: 40px; 
+    height: 100%; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+/* Strikethrough styling for bought items */
+.bought {
+    text-decoration: line-through; 
+    color: rgb(128, 128, 128); 
+}
+/* Styling for the 'Clear All' button */
+#clearBtn {
+    width: 20%; 
+    height: 60px; 
+    font-family: 'Parkinsans'; 
+    font-weight: 600; 
+    font-size: 20px; 
+    background-color: #fd21b0; 
+    border: none; 
+    border-radius: 5px; 
+    color: #ffffff; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+/* Styling for the existing item input and button */
+#existing-item {
+    position: relative;
+    background-color: #ffffffb8; 
+    padding: 30px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 15px 30px gray; 
+}
+
+/* Input field styling */
+#existingss-item input {
+    width: 70%; 
+    height: 40px;
+    font-family: 'Parkinsans', sans-serif;
+    border: 2px solid #B721FF; 
+    padding: 12px; 
+    border-radius: 5px; 
+}
+
+/* Focus effect for input field */
+#new-item input:focus {
+    outline: none; 
+    border-color: #21D4FD;
+}
+/* Styling for the 'Purchased' button */
+#clearBtn {
+    width: 20%; 
+    height: 60px; 
+    font-family: 'Parkinsans'; 
+    font-weight: 600; 
+    font-size: 20px; 
+    background-color: #fd21b0; 
+    border: none; 
+    border-radius: 5px; 
+    color: #ffffff; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+/* Styling for the 'Unpurchased' button */
+#clearBtn {
+    width: 20%; 
+    height: 60px; 
+    font-family: 'Parkinsans'; 
+    font-weight: 600; 
+    font-size: 20px; 
+    background-color: #fd21b0; 
+    border: none; 
+    border-radius: 5px; 
+    color: #ffffff; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
