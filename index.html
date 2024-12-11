@@ -7,7 +7,53 @@
     <! linking "index.html to index.css"-->
     <link rel="stylesheet" href="index.css">
 </head>
+<h1>Shopping List</h1>
 <body>
+     <!-- Main container for the webpage -->
+     <div class="container">
+      <h2>Adding new items</h2>
+
+        <!-- Section for adding new items to the list -->
+        <div id="new-item">
+          <!-- Input field where the user can type a new item -->
+
+          <input type="text" placeholder="Enter New Item...">
+          <!-- Button to add the typed item to the list -->
+          <button id="addBtn">Add</button>
+
+          <!-- Input field where the user can type the quantity of the new items-->
+           <input type="number" placeholder="Enter Quantity">
+
+           <!-- input field where the user can type the price of the new item-->
+           <input type="number" placeholder="Enter Price">
+           <!-- Empty initially, will be populated dynamically -->
+        
+        <button id="clearBtn">Clear All</button>
+      
+        </div>
+    <h2>List of items</h2>
+
+        <!-- Section where the list of items will be displayed -->
+        <div id="items">
+            <input type="text" placeholder="Enter Existing Item...">
+            <!--Input field where the user can type the quantity of existing items-->
+            <input type="number" placeholder="Enter Quantity">
+            <!--Input field where the user can check the price of existing items -->
+            <input type="number" placeholder="Check Price">
+          <!-- Empty initially, will be populated dynamically -->
+
+        
+        <button id="MarkedBtn">Purchased</button>
+
+        <button id="MarkedBtn">Unpurchased</button>
+        
+
+        <button id="clearBtn">Clear All</button>
+      </div>
+  
+      <!-- Linking external JavaScript file for the interactive functionality -->
+      <script src="index.js"></script>  
+  </body>
     
 </body>
 </html>
