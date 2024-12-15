@@ -3,57 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPPPING LIST APPLICATION</title>
+    <title>SHOPPPING LIST</title>
     <! linking "index.html to index.css"-->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<h1>Shopping List</h1>
 <body>
      <!-- Main container for the webpage -->
      <div class="container">
-      <h2>Adding new items</h2>
-
-        <!-- Section for adding new items to the list -->
-        <div id="new-item">
-          <!-- Input field where the user can type a new item -->
-
-          <input type="text" placeholder="Enter New Item...">
-          <!-- Button to add the typed item to the list -->
-          <button id="addBtn">Add</button>
-
-          <!-- Input field where the user can type the quantity of the new items-->
-           <input type="number" placeholder="Enter Quantity">
-
-           <!-- input field where the user can type the price of the new item-->
-           <input type="number" placeholder="Enter Price">
-           <!-- Empty initially, will be populated dynamically -->
-        
-        <button id="clearBtn">Clear All</button>
-      
-        </div>
-    <h2>List of items</h2>
-
-        <!-- Section where the list of items will be displayed -->
-        <div id="items">
-            <input type="text" placeholder="Enter Existing Item...">
-            <!--Input field where the user can type the quantity of existing items-->
-            <input type="number" placeholder="Enter Quantity">
-            <!--Input field where the user can check the price of existing items -->
-            <input type="number" placeholder="Check Price">
-          <!-- Empty initially, will be populated dynamically -->
-
-        
-        <button id="MarkedBtn">Purchased</button>
-
-        <button id="MarkedBtn">Unpurchased</button>
-        
-
-        <button id="clearBtn">Clear All</button>
+      <h1>ShoppingList</h1>
+      <div class="input-section">
+        <input type="text" id="itemInput"
+        placeholder="Enter item"/>
+        <button id="addButton">Add Item</button>
       </div>
-  
+      <ul id="ShoppingList"></ul>
+    <div class="actions">
+      <button id="clearButton">Clear list
+      </button>
+    </div>
+     </div>
       <!-- Linking external JavaScript file for the interactive functionality -->
-      <script src="index.js"></script>  
-  </body>
-    
+      <script src="script.js"></script>  
 </body>
 </html>
