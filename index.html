@@ -10,11 +10,12 @@
           /* Simple CSS for better visuals */
           body {
               font-family: Arial, sans-serif;
-              margin: 20px;
-              background-color: #f8f9fa;
+              margin: 0;
+              background-color: #1d218f;
           }
           h1 {
               text-align: center;
+              font-size: large;
           }
           .container {
               max-width: 500px;
@@ -45,13 +46,18 @@
       </style>
   </head>
   <body>
-      <h1>Interactive Shopping List</h1>
-      <div class="container">
-          <input type="text" id="itemInput" placeholder="Enter item name">
-          <button id="addBtn">Add Item</button>
-          <ul id="shoppingList"></ul>
-          <button id="clearBtn">Clear List</button>
-      </div>
-      <script src="app.js"></script>
+    <body>
+        <div class="container">
+          <div id="new-item">
+            <input type="text" placeholder="Enter New Item...">
+            <button id="addBtn">Add</button>
+          </div>
+          <div id="items">
+          </div>
+          <button id="clearBtn">Clear All</button>
+        </div>
+    
+        <!-- Linking external JavaScript file for the interactive functionality -->
+        <script src="index.js"></script>  
   </body>
   </html>
