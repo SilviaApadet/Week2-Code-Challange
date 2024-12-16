@@ -5,8 +5,6 @@ body{
     background-color: blueviolet;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 container{
     width: 400px;
@@ -15,11 +13,6 @@ container{
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(red, green, blue, alpha);
     text-align: center;
-}
-h1{
-    margin-bottom: 20px;
-    color: #333;
-
 }
  .input-section{
     display: flex;
