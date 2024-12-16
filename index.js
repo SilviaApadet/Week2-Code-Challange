@@ -1,97 +1,60 @@
-// Select DOM elements
-const addButton = document.getElementById('addBtn');
-const clearButton = document.getElementById('clearBtn');
-const itemInput = document.getElementById('itemInput');
-const shoppingList = document.getElementById('shoppingList');
 
-// Array to store shopping list items
-let itemsArray = [];
+/// Array to store shopping list items
+let shoppingList = [];
 
-// Function to render the list
-function renderList() {
-    shoppingList.innerHTML = ""; // Clear the list first
-    itemsArray.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = item.name;
-        if (item.purchased) li.classList.add('purchased');
+document.querySelector("#addBtn").onclick = function () {
+    const newItemInput = document.querySelector("#new-item input");
+    const newItem = newItemInput.value.trim();
 
-        // Toggle purchase status on click
-        li.addEventListener('click', () => {
-            itemsArray[index].purchased = !itemsArray[index].purchased;
-            saveToLocalStorage();
-            renderList();
-        });
-
-        // Add Edit Button
-        const editBtn = document.createElement('button');
-        editBtn.textContent = 'Edit';
-        editBtn.addEventListener('click', () => editItem(index));
-
-        // Add Delete Button
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', () => deleteItem(index));
-
-        li.appendChild(editBtn);
-        li.appendChild(deleteBtn);
-        shoppingList.appendChild(li);
-    });
-}
-
-// Function to add a new item
-function addItem() {
-    const newItem = itemInput.value.trim();
-    if (newItem !== "") {
-        itemsArray.push({ name: newItem, purchased: false });
-        saveToLocalStorage();
-        itemInput.value = ""; // Clear input
-        renderList();
+    if (newItem.length === 0) {
+        alert("Please enter an item.");
     } else {
-        alert("Please enter an item name.");
+        // Add item to the array
+        shoppingList.push(newItem);
+
+        // Add item to the DOM
+        document.querySelector("#items").innerHTML += `
+        <div class="item"> 
+            <span id="item-name">
+                ${newItem}
+            </span>
+            <button class="delete">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+        `;
+
+        // Add delete functionality
+        var current_items = document.querySelectorAll(".delete");
+        for (var i = 0; i < current_items.length; i++) {
+            current_items[i].onclick = function () {
+                const itemName = this.previousElementSibling.textContent.trim();
+                // Remove item from array
+                shoppingList = shoppingList.filter(item => item !== itemName);
+
+                // Remove item from DOM
+                this.parentNode.remove();
+            };
+        }
+
+        // Add purchased toggle functionality
+        var items = document.querySelectorAll(".item");
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function () {
+                this.classList.toggle("bought");
+            };
+        }
+
+        // Add functionality to clear all items
+        document.querySelector("#clearBtn").onclick = function () {
+            // Clear the array
+            shoppingList = [];
+
+            // Clear the DOM
+            document.querySelector("#items").innerHTML = "";
+        };
+
+        // Clear the input field
+        newItemInput.value = "";
     }
-}
-
-// Function to clear the list
-function clearList() {
-    itemsArray = [];
-    saveToLocalStorage();
-    renderList();
-}
-
-// Function to edit an item
-function editItem(index) {
-    const newName = prompt("Edit item name:", itemsArray[index].name);
-    if (newName !== null && newName.trim() !== "") {
-        itemsArray[index].name = newName.trim();
-        saveToLocalStorage();
-        renderList();
-    }
-}
-
-// Function to delete an item
-function deleteItem(index) {
-    itemsArray.splice(index, 1);
-    saveToLocalStorage();
-    renderList();
-}
-
-// Save to localStorage
-function saveToLocalStorage() {
-    localStorage.setItem('shoppingList', JSON.stringify(itemsArray));
-}
-
-// Load from localStorage
-function loadFromLocalStorage() {
-    const savedItems = localStorage.getItem('shoppingList');
-    if (savedItems) {
-        itemsArray = JSON.parse(savedItems);
-        renderList();
-    }
-}
-
-// Event listeners
-addButton.addEventListener('click', addItem);
-clearButton.addEventListener('click', clearList);
-
-// Load data when page loads
-loadFromLocalStorage();
+};
